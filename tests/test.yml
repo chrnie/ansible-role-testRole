@@ -1,0 +1,11 @@
+---
+
+# gather facts from hosts and dump them to a directory
+- hosts: all
+  vars:
+    baseIni:
+      sectionC:
+        key1: override1
+        key2: override2
+  roles:
+    - role_under_test

@@ -1,0 +1,46 @@
+---
+
+some_ini_files:
+  'resource.ini': 
+    icingaweb_db:
+      type: "db"
+      db: "{{ pgsql_db_rdbs }}"
+      host: "{{ pgsql_db_host }}"
+      port: "{{ pgsql_db_port }}"
+      dbname: "{{ pgsql_db_name }}"
+      username: "{{ pgsql_db_user }}"
+      password: "{{ pgsql_db_password }}"
+      charset: ""
+      persistent: "1"
+      use_ssl: "1"
+    mysql_db:
+      type: "db"
+      db: "{{ mysql_db_rdbs }}"
+      host: "{{ mysql_db_host }}"
+      port: "{{ mysql_db_port }}"
+      dbname: "{{ mysql_db_dbname }}"
+      username: "{{ mysql_db_user }}"
+      password: "{{ mysql_db_password }}"
+      charset: ""
+      persistent: "1"
+      use_ssl: "1"
+  'elementOverview.ini':
+    'section A: Strings': 
+      keya1: value1a
+      keya2: value2a
+      keya3: 
+        - listElementA31
+        - listElementA32
+        - listElementA33
+    'section B: Numbers': 
+      keyB1: 
+        - 12,4
+        - 13.6
+        - "12,3"
+      keyB2: 123
+      keyB3: "123"
+      keyB4: '123'
+      55: value2b
+      56: 8+3
+      57: "{{ 8+3 }}"
+  'base.ini': "{{baseIni}}"

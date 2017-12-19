@@ -1,0 +1,18 @@
+
+- name: write ini files
+  template:
+    dest: "/tmp/{{iniDict.key}}"
+    src: templates/generic_ini.j2
+  with_dict: "{{some_ini_files}}"
+  loop_control:
+    loop_var: iniDict
+  when: not iniDict.key == 'resource.ini'
+
+- name: write resource.ini from special template
+  vars:
+    iniDict: 
+      key: 'resource.ini'
+      value: "{{some_ini_files['resource.ini']}}"
+  template:
+    dest: "/tmp/resource.ini"
+    src: templates/resource_ini.j2

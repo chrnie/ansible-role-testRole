@@ -1,0 +1,22 @@
+---
+
+# Override default
+baseIni:
+  sectionC:
+    key1: default1
+    key2: default2
+    key3: default3
+
+pgsql_db_rdbs: pgsql
+pgsql_db_host: "127.0.0.1"
+pgsql_db_port: "5432"
+pgsql_db_name: "importantDB"
+pgsql_db_user: user42
+pgsql_db_password: securepasswd
+
+mysql_db_rdbs: mysql
+mysql_db_host: localhost
+mysql_db_port: ""
+mysql_db_dbname: "another_db"
+mysql_db_user: user43
+mysql_db_password: SecurePassword

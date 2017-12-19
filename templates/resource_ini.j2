@@ -1,0 +1,12 @@
+# {{ ansible_managed }}, generic ini template
+{% for section, attrib in iniDict.value.iteritems() %}
+
+[{{section}}]
+{% for key, value in attrib.iteritems() %}
+{% if value is string %}  {{ key }} = "{{ value }}"
+{% elif value|int %}  {{ key }} = {{ value }}
+{% elif value is mapping %}# You've tried to write {{ key }} but ini files don't support this!
+{% elif value is sequence %}  {{ key }} = {% for valueElement in value %}{{ valueElement }}{{ ',' if not loop.last else "\n" }}{% endfor %}
+{% endif %}
+{% endfor %}
+{% endfor %}
