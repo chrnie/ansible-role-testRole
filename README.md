@@ -15,6 +15,7 @@ Available variables are listed below, along with default values (see `defaults/m
 ## Example Playbook
 You can find an example playbook for testing purposes on https://github.com/chrnie/ansible-role-testRole
 
+```yml
   - hosts: all
     vars:
       baseIni:
@@ -23,6 +24,7 @@ You can find an example playbook for testing purposes on https://github.com/chrn
           key2: override2
     roles:
        - { role: chrnie.testRole }
+```
 
 
 ## License
