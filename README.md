@@ -15,15 +15,14 @@ Available variables are listed below, along with default values (see `defaults/m
 ## Example Playbook
 You can find an example playbook for testing purposes on https://github.com/chrnie/ansible-role-testRole
 
-# gather facts from hosts and dump them to a directory
-- hosts: all
-  vars:
-    baseIni:
-      sectionC:
-        key1: override1
-        key2: override2
-  roles:
-     - { role: chrnie.testRole }
+  - hosts: all
+    vars:
+      baseIni:
+        sectionC:
+          key1: override1
+          key2: override2
+    roles:
+       - { role: chrnie.testRole }
 
 
 ## License
