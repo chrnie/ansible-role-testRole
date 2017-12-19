@@ -1,7 +1,15 @@
+---
+
+- name: create directories
+  file:
+    path: "{{item.value}}"
+    state: directory
+    mode: 0755
+  with_dict: "{{iniPath}}"
 
 - name: write ini files
   template:
-    dest: "/tmp/{{iniDict.key}}"
+    dest: "{{ iniPath[iniDict.key] if iniPath[iniDict.key] is defined else iniPath['default'] }}/{{iniDict.key}}"
     src: templates/generic_ini.j2
   with_dict: "{{some_ini_files}}"
   loop_control:
@@ -14,5 +22,5 @@
       key: 'resource.ini'
       value: "{{some_ini_files['resource.ini']}}"
   template:
-    dest: "/tmp/resource.ini"
+    dest: "{{ iniPath[iniDict.key] if iniPath[iniDict.key] is defined else iniPath['default'] }}/{{iniDict.key}}"
     src: templates/resource_ini.j2
