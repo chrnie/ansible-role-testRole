@@ -2,7 +2,7 @@
 
 some_ini_files:
   'resource.ini': 
-    icingaweb_db:
+    pgsql_db:
       type: "db"
       db: "{{ pgsql_db_rdbs }}"
       host: "{{ pgsql_db_host }}"
