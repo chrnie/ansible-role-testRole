@@ -8,6 +8,7 @@ galaxy_info:
     - name: Linux
       versions:
       - all
-  galaxy_tags:[]
+  galaxy_tags:
+    - tests
 
 dependencies: []
