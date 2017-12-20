@@ -19,7 +19,7 @@ baseIni:
 
 ```yml
 # Override pgsql credentials
-pgsql_db_rdbs: pgsql
+pgsql_db_type: pgsql
 pgsql_db_host: "127.0.0.1"
 pgsql_db_port: "5432"
 pgsql_db_name: "importantDB"
@@ -29,7 +29,7 @@ pgsql_db_password: securepasswd
 
 ```yml
 # Override mysql credentials
-mysql_db_rdbs: mysql
+mysql_db_type: mysql
 mysql_db_host: localhost
 mysql_db_port: ""
 mysql_db_dbname: "another_db"

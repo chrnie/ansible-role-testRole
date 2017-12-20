@@ -4,7 +4,7 @@ some_ini_files:
   'resource.ini': 
     pgsql_db:
       type: "db"
-      db: "{{ pgsql_db_rdbs }}"
+      db: "{{ pgsql_db_type }}"
       host: "{{ pgsql_db_host }}"
       port: "{{ pgsql_db_port }}"
       dbname: "{{ pgsql_db_name }}"
@@ -15,7 +15,7 @@ some_ini_files:
       use_ssl: "1"
     mysql_db:
       type: "db"
-      db: "{{ mysql_db_rdbs }}"
+      db: "{{ mysql_db_type }}"
       host: "{{ mysql_db_host }}"
       port: "{{ mysql_db_port }}"
       dbname: "{{ mysql_db_dbname }}"
